@@ -17,7 +17,7 @@
 
 /* prototypes */
 
-int prompt(char **argv);
 char *read_line(void);
+char **split_line(char *input);
 
 #endif
