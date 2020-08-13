@@ -1,4 +1,4 @@
-# Simple Shell :octocat: #
+# Simple Shell :shell: #
 This repository contains our own version of a mini Shell
 ## Environment ##
 * Language: C
