@@ -1,6 +1,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/xioperez01/simple_shell)](https://github.com/xioperez01/simple_shell/issues)
-[![GitHub forks](https://img.shields.io/github/forks/xioperez01/simple_shell)](https://github.com/xioperez01/simple_shell/network)
-[![GitHub stars](https://img.shields.io/github/stars/xioperez01/simple_shell)](https://github.com/xioperez01/simple_shell/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/xioperez01/simple_shell?color=orange)](https://github.com/xioperez01/simple_shell/network)
+[![GitHub stars](https://img.shields.io/github/stars/xioperez01/simple_shell?color=blueviolet)](https://github.com/xioperez01/simple_shell/stargazers)
 # Simple Shell :shell: #
 This repository contains our own version of a mini Shell
 ## Environment ##
