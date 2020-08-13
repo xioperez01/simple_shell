@@ -21,8 +21,6 @@ int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
 		commands = split_line(line);
 		printf("separó bn esto: %s %s %s", commands[0], commands[1], commands[2]);
 		status = exec_commands(commands);
-		/* arguments = _parse(line);*/
-		/*status = _execute(args);*/
 		free(line);
 		free(commands);
 	} while (status);
