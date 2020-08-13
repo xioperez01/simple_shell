@@ -1,4 +1,5 @@
-# Simple Shell :octocat: #
+# Simple Shell :Shell: #
+https://img.shields.io/github/issues/xioperez01/simple_shell
 This repository contains our own version of a mini Shell
 ## Environment ##
 * Language: C
