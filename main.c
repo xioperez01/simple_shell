@@ -9,19 +9,26 @@
 int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
 {
 	char *line = NULL;
-	/*char **arguments;*/
-	int status = 1;
+	char **commands;
+	int status;
+	
 
 	do {
 		if (isatty(STDIN_FILENO))
 			write(1, "MAXIO~$ ", 8);
 		line = read_line();
-		printf("bien hasta ahora: %s", line);
+		printf("leyó bn esto: %s\n", line);
+		commands = split_line(line);
+		printf("separó bn esto: %s %s %s", commands[0], commands[1], commands[2]);
+		status = exec_commands(commands);
 		/* arguments = _parse(line);*/
 		/*status = _execute(args);*/
 		free(line);
-		/*free(arguments);*/
+		free(commands);
 	} while (status);
+
+	if(isatty(STDIN_FILENO))
+		write(1, "\n", 1);
 
 	return (0);
 }
