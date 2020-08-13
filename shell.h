@@ -20,6 +20,5 @@
 char *read_line(void);
 char **split_line(char *input);
 int exec_commands(char **commands);
-int sum_integers(int argc, char **argv[]);
 
 #endif
