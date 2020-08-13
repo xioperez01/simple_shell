@@ -1,5 +1,5 @@
 # Simple Shell :shell: #
-https://img.shields.io/github/issues/xioperez01/simple_shell
+[![GitHub issues](https://img.shields.io/github/issues/xioperez01/simple_shell)](https://github.com/xioperez01/simple_shell/issues)
 This repository contains our own version of a mini Shell
 ## Environment ##
 * Language: C
