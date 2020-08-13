@@ -1,4 +1,4 @@
-# Simple Shell :Shell: #
+# Simple Shell :shell: #
 https://img.shields.io/github/issues/xioperez01/simple_shell
 This repository contains our own version of a mini Shell
 ## Environment ##
