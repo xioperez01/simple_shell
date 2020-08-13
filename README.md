@@ -9,5 +9,5 @@ This repository contains our own version of a mini Shell
 * Compiler: gcc 4.8.4
 * Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 ### Autors ##
-* Martin Corredor [![M](https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/30px-Twitter_Bird.svg.png)](https://twitter.com/Richi_Corredor)
+* Martin Corredor [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRichi_Corredor)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fxioperez01%2Fsimple_shell)
 * Angie Pérez [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fxiommyperez)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fxioperez01%2Fsimple_shell)
