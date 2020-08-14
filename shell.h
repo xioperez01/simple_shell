@@ -33,11 +33,15 @@ struct stat {
 	time_t    st_ctime;   /* time of last status change */
 };
 
-/* prototypes */
+/* main functions prototypes */
 
 char *read_line(void);
 char **split_line(char *input);
 int exec_commands(char **commands);
 int _stat(const char *phat, struct stat *buf);
+
+/* aux_functions prototypes */
+
+int _putchar(char c);
 
 #endif
