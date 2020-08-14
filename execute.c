@@ -15,7 +15,7 @@ int exec_commands(char **commands)
 	/*Process CHILD*/
 	if (process == 0)
 	{
-		/*printf ("se está ejecutando el hijo: %d \n", getpid());*/
+		printf ("se está ejecutando el hijo: %d \n", getpid());
 		if (execve(commands[0], commands, NULL) == -1)
 		{
 			perror("child filed");

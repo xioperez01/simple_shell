@@ -18,6 +18,8 @@
 /* prototypes */
 
 char *read_line(void);
+int str_len(char *str); 
+char *convert_to_null(char *line);
 char **split_line(char *input);
 int exec_commands(char **commands);
 
