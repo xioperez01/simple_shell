@@ -24,10 +24,12 @@ char *convert_to_null(char *line);
 char **split_line(char *input);
 int exec_commands(char **commands);
 int _stat(const char *phat, struct stat *buf);
+char *create_path(char *input);
 
 /* aux_functions prototypes */
 
 int _putchar(char c);
 int _strstr(char *haystack, char *needle);
+char *_concat(char *dest, char *src);
 
 #endif
