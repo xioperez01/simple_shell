@@ -58,7 +58,7 @@ char *_concat(char *dest, char *src)
 {
 	int i = 0, j = 0;
 	int len1 = _strlen(dest) + _strlen(src);
-	char *str_union = malloc(sizeof(char) * (len1 + 1));
+	char *str_union = malloc(sizeof(char) * len1);
 
 	if (!str_union)
 		return (NULL);
@@ -75,7 +75,6 @@ char *_concat(char *dest, char *src)
 		i++;
 		j++;
 	}
-	str_union[i] = '\0';
 
 	return (str_union);
 }
