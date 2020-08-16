@@ -10,7 +10,7 @@
 char *create_path(char *input)
 {
 	char *str = input;
-	char *path = NULL;
+	char *path;
 	char *bin = "/bin/";
 
 	if (_strstr(str, "cd") == -1 && _strstr(str, "exit") == -1
