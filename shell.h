@@ -23,19 +23,13 @@ char *convert_to_null(char *line);
 char **split_line(char *input);
 int exec_commands(char **commands);
 int _stat(const char *phat, struct stat *buf);
-char *create_path(char *input);
+char *create_path(char **input);
 
 /* struct and prototypes to built_ins */
 
-typedef struct base
-{
-	char *op;
-	int (*f)(char **p);
-} built_t;
-
 int _cd(char **arg);
-int _help(char **arg);
-int _exit(char **arg);
+int _help(void);
+int _exit2(void);
 int _env(char **arg);
 
 /* aux_functions prototypes */

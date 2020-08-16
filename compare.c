@@ -7,31 +7,21 @@
   */
 
 
-char *create_path(char *input)
+char *create_path(char **command)
 {
-	char *str = input;
-	char *path;
-	char *bin = "/bin/";
+	char *path, *bin = "/bin/";
+	char *options[] = {"/bin/", "cd", "exit", "help", "env", "./"};
+	int i;
 
-	if (_strstr(str, "cd") == -1 && _strstr(str, "exit") == -1
-			&& _strstr(str, "help") == -1 && _strstr(str, "env") == -1)
+	for (i = 0; i < 7; i++)
 	{
-		if (_strstr(str, "./") == 0)
-		{
-			return (str);
-		}
-		else if (_strstr(str, "/bin/") == 0)
-		{
-			return (str);
-		}
-		else
-		{
-			path = _concat(bin, str);
-			return (path);
-		}
+		if (_strstr(command[0], options[i]) == 0)
+			return (command[0]);
 	}
-	else
-	{
-		return (str);
-	}
+
+	if (i == 7)
+		path = _concat(bin, command[0]);
+
+	return (path);
+
 }

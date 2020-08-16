@@ -23,7 +23,7 @@ int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
 		printf("convirtió bn esto: %s\n\n", line_converted);
 		commands = split_line(line_converted);
 		printf("separó bn esto: %s %s %s\n\n", commands[0], commands[1], commands[2]);
-		path_command = create_path(commands[0]);
+		path_command = create_path(commands);
 		printf("está creando bn la ruta\n\n");
 		if (stat(path_command, &description) == 0)
 			status = exec_commands(commands);
