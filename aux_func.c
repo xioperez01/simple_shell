@@ -56,19 +56,43 @@ int _strstr(char *haystack, char *needle)
  */
 char *_concat(char *dest, char *src)
 {
-	int i = 0;
-	int j = 0;
+	int i = 0, j = 0;
+	int len1 = _strlen(dest) + _strlen(src);
+	char *str_union = malloc(sizeof(char) * (len + 1));
+
+	if (!str_union)
+		return (NULL);
 
 	while (dest[i] != '\0')
+	{
+		str_union[i] = dest[i];
 		i++;
+	}
 
 	while (src[j] != '\0')
 	{
-		dest[i] = src[j];
+		str_union[i] = src[j];
 		i++;
 		j++;
 	}
-	dest[i] = '\0';
+	str_union[i] = '\0';
 
-	return (dest);
+	return (str_union);
+}
+
+/**
+ *_strlen - returns the length of a string.
+ *@s: sting
+ *Return: length
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
 }

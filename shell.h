@@ -31,5 +31,6 @@ char *create_path(char *input);
 int _putchar(char c);
 int _strstr(char *haystack, char *needle);
 char *_concat(char *dest, char *src);
+int _strlen(char *s);
 
 #endif
