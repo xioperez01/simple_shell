@@ -1,0 +1,85 @@
+.TH SIMPLE SHELL 1 "August 2020" "1.0" "SHELL MAN PAGE"
+.SH NAME
+.PP
+.B Simple Shell - command languaje interpreter
+.SH SYNOPSIS
+.B Simple Shell
+.SH DESCRIPTION
+Simple shell is a mini version of a command language interpreter that executes commands read from standard input. This mini version is limited to certain built-in shell functions found in the environmental variable
+.I PATH.
+This simple version of shell does not yet handle pipes, redirects, variable expansion or more additional functions.
+.SS Invocation
+.I Interactive
+Simple Shell can be invoked interactively by typing ./hsh in the user's normal Shell terminal.
+.I Non-interactive
+Simple Shell can be invoked non-interactively via pipeline typing (e.g. echo "/bin/ls" | ./hsh) in the user's normal Shell terminal.
+.SS Commands Executions Process
+.sp
+If the command name does not contain slashes, the shell tries to locate it. If there is a shell function with that name, that function is invoked. If the name does not match a function, the shell looks for it in the shell's internals list. If a match is found, that embedded is invoked.
+.sp
+If the name is not a shell function or a built-in function, and does not contain slashes, the simple shell looks in the PATH environment variable for the executable file that matches the name. If the search is unsuccessful, the simple shell prints an error message "Error: File or description not found."
+.SS Sample Functions
+.sp
+ls
+.I [[flags]...[arguments]]
+   Lists files in current directory according to user indicated flags.
+.sp
+echo
+.I [arguments]
+      Displays in standard output the given arguments followed by a new line.
+.SS Shell Builtins Commands
+.sp
+cd
+	Changes directory
+.sp
+env
+	Prints environmental variables
+.sp
+help
+	The help function shows how to use the built-in functions and the names of all existing ones
+.sp
+exit
+	Exits the simple shell and returns to the user's original shell
+.sp
+.SH EXAMPLE
+To
+.I invoke
+Simple Shell:
+.sp
+.RS
+(terminal)$ ./hsh
+.RE
+.R1S
+.I MAXIO$
+.RE
+.sp
+Example
+.sp
+.RS
+.I MAXIO$
+echo "Our own mini shell"
+.RE
+.RS
+I Our own mini shell
+.RE
+.RS
+.I MAXIO$
+.RE
+.sp
+To exit the Simple Shell
+.sp
+.RS
+.I MAXIO$ exit
+.RE
+.RS
+(terminal)$
+.RE
+.SH SEE ALSO
+.I man bash, man sh.
+.SH AUTORS
+Written by:
+.PP
+-Martin Corredor.
+-Angie Perez.
+
+.Th
