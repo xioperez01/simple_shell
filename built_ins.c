@@ -1,4 +1,34 @@
 #include "shell.h"
+/**
+ *find_built - Run the buitin if they exist
+ *@commands: Command line
+ *Return: -1 if builtin not exist or 0 on succes
+ */
+
+char **find_built(char **commands)
+{
+	int i = 0;
+	int result;
+	built_t ops[] = {
+		{"cd", _cd},
+		{"exit", _exit2},
+		{"help", _help},
+		{"env", _env},
+		{NULL, NULL}
+	};
+
+	while (i < 5)
+	{
+		if (*(ops[i].op) == commands[0])
+		{
+			result = ops[i].f(commands);
+			return;
+		}
+		i++;
+	}
+	if (i == 5)
+		return (commands);
+}
 
 /**
  *_cd - Directory change function

@@ -6,7 +6,7 @@
   *Return: zero if success
  */
 
-int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
+int main(void)
 {
 	char *line = NULL, *line_converted, **commands, **path_command;
 	int status, i = 0;
@@ -19,8 +19,10 @@ int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
 
 		line = read_line();
 		line_converted = convert_to_null(line);
-		printf("que fastidio el martin\n");
+		/* printf("que fastidio el martin\n"); */
 		commands = split_line(line_converted);
+		if(find_builtin(commands) == 0)
+		{
 		path_command = create_path(commands);
 		printf("la ruta es: %s\n", path_command[0]);
 		if (stat(path_command[0], &description) == 0)
