@@ -114,13 +114,24 @@ int _exit2(void)
 }
 
 /**
-  *_env - Print the environt
-  *@arg: Our comand
-  *Return: 1;
-  */
-int _env(void)
+ *_env - Prints the current environ
+ *@commands: Command line
+ */
+
+void _env(char **commands)
 {
-	printf("Ejecuta el env");
-	return (1);
+	int i;
+	char *s = *environ;
+	if (commands[1] != NULL)
+	{
+		return;
+	}
+	for (i = 0; s; i++)
+	{
+		write(STDIN_FILENO, s, _strlen(s));
+		write(STDIN_FILENO, "\n", 1);
+		s = *(environ + i);
+	}
 }
+
 
