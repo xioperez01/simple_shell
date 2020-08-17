@@ -1,33 +1,35 @@
 #include "shell.h"
+
 /**
- *find_built - Run the buitin if they exist
- *@commands: Command line
- *Return: -1 if builtin not exist or 0 on succes
- */
+  *execute_builtins - Execute the built_in for each case
+  *@command: Command of the line command
+  *Return: 0
+  */
 
-char **find_built(char **commands)
+int execute_builtins(char **commands)
 {
-	int i = 0;
-	int result;
-	built_t ops[] = {
-		{"cd", _cd},
-		{"exit", _exit2},
-		{"help", _help},
-		{"env", _env},
-		{NULL, NULL}
-	};
+	char *f_cd = "cd";
+	char *f_help = "help";
+	char *f_exit = "exit";
+	char *f_env1 = "env";
 
-	while (i < 5)
-	{
-		if (*(ops[i].op) == commands[0])
-		{
-			result = ops[i].f(commands);
-			return;
-		}
-		i++;
-	}
-	if (i == 5)
-		return (commands);
+	/*In case the command is cd*/
+	if (_strstr(commands[0], f_cd) == 0)
+		return (_cd(commands));
+
+	/*In case the command is help*/
+	if (_strstr(commands[0], f_help) == 0)
+		return (_help());
+
+	/*In case the command is exit*/
+	if (_strstr(commands[0], f_exit) == 0)
+		return (_exit2());
+	
+	/*In case the command is env*/
+	if (_strstr(commands[0], f_env1) == 0)
+		return (_env());
+
+	return (-1);
 }
 
 /**
@@ -56,6 +58,7 @@ int _cd(char **arg)
 			_putchar('\n');
 		}
 	}
+	printf("Ejecutó la función_cd\n\n");
 	return (1);
 }
 
@@ -64,7 +67,7 @@ int _cd(char **arg)
  *@arg: Unused argument
  *Return: 0
  */
-int _help(char **arg)
+int _help(void)
 {
 	int i;
 	char *s = "MAXIO Shell";
@@ -76,35 +79,27 @@ int _help(char **arg)
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
 	_putchar('\n');
-
 	for (i = 0; s2[i] != '\0'; i++)
 		_putchar(s2[i]);
 	_putchar('\n');
-
 	for (i = 0; s3[i] != '\0'; i++)
 		_putchar(s4[i]);
 	_putchar('\n');
-
 	for (i = 0; s4[i] != '\0'; i++)
 		_putchar(s5[i]);
 	_putchar('\n');
-
 	for (i = 0; s5[i] != '\0'; i++)
 		_putchar(s5[i]);
 	_putchar('\n');
-
 	for (i = 0; s6[i] != '\0'; i++)
 		_putchar(s6[i]);
 	_putchar('\n');
-
 	for (i = 0; s7[i] != '\0'; i++)
 		_putchar(s7[i]);
 	_putchar('\n');
-
 	for (i = 0; s8[i] != '\0'; i++)
 		_putchar(s8[i]);
 	_putchar('\n');
-
 	return (1);
 }
 
@@ -113,7 +108,19 @@ int _help(char **arg)
  *@arg: Our command.
  *Return: 0
  */
-int _exit2(char **arg)
+int _exit2(void)
 {
 	return (0);
 }
+
+/**
+  *_env - Print the environt
+  *@arg: Our comand
+  *Return: 1;
+  */
+int _env(void)
+{
+	printf("Ejecuta el env");
+	return (1);
+}
+

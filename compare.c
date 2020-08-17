@@ -10,16 +10,16 @@
 char **create_path(char **command)
 {
 	char *path, *bin = "/bin/";
-	char *options[] = {"/bin/", "cd", "exit", "help", "env", "./"};
+	char *options[] = {"/bin/", "./"};
 	int i;
 
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 3; i++)
 	{
 		if (_strstr(command[0], options[i]) == 0)
 			return (command);
 	}
 
-	if (i == 7)
+	if (i == 3)
 	{
 		path = _concat(bin, command[0]);
 	}

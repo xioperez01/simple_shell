@@ -25,19 +25,22 @@ int exec_commands(char **commands);
 int _stat(const char *phat, struct stat *buf);
 char **create_path(char **input);
 char **find_built(char **commands);
+/*int find_type_command(char **command);*/
+int execute_builtins(char **command);
 
 /* struct and prototypes to built_ins */
 
-typedef struct base
+/*typedef struct base
 {
 	char *op;
 	int (*f)(char **arg);
 } built_t;
-
+*/
 int _cd(char **arg);
-int _help(char **arg);
-int _exit2(char **arg);
-int _env(char **arg);
+int _help(void);
+int _exit2(void);
+int _env(void);
+
 
 /* aux_functions prototypes */
 
