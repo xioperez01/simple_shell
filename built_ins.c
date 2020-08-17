@@ -34,7 +34,7 @@ int _cd(char **arg)
  *@arg: Unused argument
  *Return: 0
  */
-int _help(void)
+int _help(char **arg)
 {
 	int i;
 	char *s = "MAXIO Shell";
@@ -83,7 +83,7 @@ int _help(void)
  *@arg: Our command.
  *Return: 0
  */
-int _exit2(void)
+int _exit2(char **arg)
 {
 	return (0);
 }
