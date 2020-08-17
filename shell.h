@@ -15,6 +15,10 @@
 #include <dirent.h>
 #include <signal.h>
 
+/* global variable */
+
+extern char **environ;
+
 /* main functions prototypes */
 
 char *read_line(void);
