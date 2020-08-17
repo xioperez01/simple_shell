@@ -13,6 +13,9 @@ char **create_path(char **command)
 	char *options[] = {"/bin/", "./"};
 	int i;
 
+	if(command == NULL || command[0] == NULL)
+		return (NULL);
+
 	for (i = 0; i < 3; i++)
 	{
 		if (_strstr(command[0], options[i]) == 0)

@@ -27,7 +27,7 @@ int execute_builtins(char **commands)
 	
 	/*In case the command is env*/
 	if (_strstr(commands[0], f_env1) == 0)
-		return (_env());
+		return (_env(commands));
 
 	return (-1);
 }
@@ -118,13 +118,13 @@ int _exit2(void)
  *@commands: Command line
  */
 
-void _env(char **commands)
+int _env(char **commands)
 {
 	int i;
 	char *s = *environ;
 	if (commands[1] != NULL)
 	{
-		return;
+		return (0);
 	}
 	for (i = 0; s; i++)
 	{
@@ -132,6 +132,7 @@ void _env(char **commands)
 		write(STDIN_FILENO, "\n", 1);
 		s = *(environ + i);
 	}
+	return (0);
 }
 
 

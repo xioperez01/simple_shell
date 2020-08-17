@@ -11,6 +11,9 @@ int exec_commands(char **commands)
 	pid_t process;
 	int status;
 
+	if (commands == NULL | commands[0] == NULL)
+		return (NULL);
+
 	process = fork();
 	/*Process CHILD*/
 	if (process == 0)

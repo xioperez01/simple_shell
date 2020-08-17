@@ -27,7 +27,11 @@ char *convert_to_null(char *line)
 	char *line_converted;
 	int i;
 
+	if(line == NULL)
+		return (NULL);
+
 	line_converted = malloc(sizeof(char) * str_len(line));
+
 	if (line_converted == NULL)
 		return (NULL);
 	for (i = 0; i <= str_len(line); i++)

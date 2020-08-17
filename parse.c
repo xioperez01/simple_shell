@@ -13,7 +13,12 @@ char **split_line(char *input)
 	char *separator = " ";
 	char *parsed;
 	int index = 0;
-	char **commands = malloc(BUFF_SIZE * sizeof(char *));
+	char **commands;
+
+	if (input == NULL)
+		return (NULL);
+
+	commands = malloc(BUFF_SIZE * sizeof(char *));
 
 	if (commands == NULL)
 	{
@@ -32,5 +37,6 @@ char **split_line(char *input)
 
 	commands[index] = NULL;
 	return (commands);
+	free(commands);
 
 }

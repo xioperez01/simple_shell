@@ -43,7 +43,7 @@ int execute_builtins(char **command);
 int _cd(char **arg);
 int _help(void);
 int _exit2(void);
-void _env(void);
+int _env(char **commands);
 
 
 /* aux_functions prototypes */
