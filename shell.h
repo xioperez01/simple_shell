@@ -23,7 +23,7 @@ char *convert_to_null(char *line);
 char **split_line(char *input);
 int exec_commands(char **commands);
 int _stat(const char *phat, struct stat *buf);
-char *create_path(char **input);
+char **create_path(char **input);
 
 /* struct and prototypes to built_ins */
 

@@ -8,8 +8,8 @@
 
 int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
 {
-	char *line = NULL, *line_converted, **commands, *path_command;
-	int status, i;
+	char *line = NULL, *line_converted, **commands, **path_command;
+	int status, i = 0;
 	struct stat description;
 	char s[] = "NOT FOUND";
 
@@ -18,15 +18,16 @@ int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
 			write(1, "MAXIO~$ ", 8);
 
 		line = read_line();
-		printf("leyó bn esto: %s\n\n", line);
 		line_converted = convert_to_null(line);
-		printf("convirtió bn esto: %s\n\n", line_converted);
+		printf("que fastidio el martin\n");
 		commands = split_line(line_converted);
-		printf("separó bn esto: %s %s %s\n\n", commands[0], commands[1], commands[2]);
 		path_command = create_path(commands);
-		printf("está creando bn la ruta\n\n");
-		if (stat(path_command, &description) == 0)
-			status = exec_commands(commands);
+		printf("la ruta es: %s\n", path_command[0]);
+		if (stat(path_command[0], &description) == 0)
+		{
+			printf("entra al if de stat\n");
+			status = exec_commands(path_command);
+		}
 		else
 		{
 			for(i = 0; s[i] != '\0'; i++)
@@ -44,4 +45,3 @@ int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
 
 	return (0);
 }
-
