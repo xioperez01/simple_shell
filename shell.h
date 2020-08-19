@@ -32,7 +32,7 @@ char *_path(char *path_command, char *commands);
 char *_getenv(char *name);
 char *_final_path(char *path, char *new_command);
 
-/*int find_type_command(char **command);*/
+/* Builtins prototypes */
 
 int execute_builtins(char **command);
 int _cd(char **arg);
@@ -40,6 +40,9 @@ int _help(void);
 int _exit2(void);
 int _env(char **commands);
 
+/* Sighandler prototype */
+
+void sighandler(int sig __attribute__((unused)));
 
 /* aux_functions prototypes */
 

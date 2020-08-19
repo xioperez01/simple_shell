@@ -11,6 +11,7 @@ int main(void)
 	int status, i = 0; /*type_command = 0*/
 	char s[] = "Error: File or description not found\n";
 
+	signal(SIGINT, sighandler);
 	do {
 		if (isatty(STDIN_FILENO))
 			write(1, "MAXIO~$ ", 8);
