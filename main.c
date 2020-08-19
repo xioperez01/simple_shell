@@ -20,7 +20,7 @@ int main(void)
 		line_converted = convert_to_null(input);
 		tokens = split_line(line_converted, " ");
 		status = execute_builtins(tokens);
-		if (status == -1)
+		if (status == EXIT_FAILURE)
 		{
 			path_command = _getenv("PATH=");
 			search_program = _path(path_command, tokens[0]);
