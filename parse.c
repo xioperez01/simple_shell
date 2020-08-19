@@ -7,10 +7,8 @@
   *Return: array of commands strings
   */
 
-char **split_line(char *input)
+char **split_line(char *input, char *separator)
 {
-
-	char *separator = " ";
 	char *parsed;
 	int index = 0;
 	char **commands;

@@ -24,22 +24,16 @@ extern char **environ;
 char *read_line(void);
 int str_len(char *str);
 char *convert_to_null(char *line);
-char **split_line(char *input);
+char **split_line(char *input, char *separator);
 int exec_commands(char **commands);
 int _stat(const char *phat, struct stat *buf);
-char **create_path(char **input);
 char **find_built(char **commands);
+char *_path(char *path_command, char *commands);
+char *_getenv( char *name);
+
 /*int find_type_command(char **command);*/
+
 int execute_builtins(char **command);
-
-/* struct and prototypes to built_ins */
-
-/*typedef struct base
-{
-	char *op;
-	int (*f)(char **arg);
-} built_t;
-*/
 int _cd(char **arg);
 int _help(void);
 int _exit2(void);

@@ -41,5 +41,4 @@ char *convert_to_null(char *line)
 			line_converted[i] = '\0';
 	}
 	return (line_converted);
-	free(line_converted);
 }
