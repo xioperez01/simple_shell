@@ -2,7 +2,7 @@
 
 /**
   *execute_builtins - Execute the built_in for each case
-  *@command: Command of the line command
+  *@commands: Command of the line command
   *Return: 0
   */
 
@@ -24,7 +24,7 @@ int execute_builtins(char **commands)
 	/*In case the command is exit*/
 	if (_strstr(commands[0], f_exit) == 0)
 		return (_exit2());
-	
+
 	/*In case the command is env*/
 	if (_strstr(commands[0], f_env1) == 0)
 		return (_env(commands));
@@ -64,48 +64,37 @@ int _cd(char **arg)
 
 /**
  *_help - Help function
- *@arg: Unused argument
  *Return: 0
  */
 int _help(void)
 {
 	int i;
-	char *s = "MAXIO Shell";
-	char *s2 = "Type program names and arguments, and hit enter.";
-	char *s3 = "The following commands are built in:";
-	char *s4 = "cd", *s5 = "exit", *s6 = "env", *s7 = "help";
-	char *s8 = "Use the man command for information on other programs.";
+	char *s = "MAXIO Simple Shell\n";
+	char *s2 = "Type program names and arguments, and hit enter.\n";
+	char *s3 = "The following commands are built in:\n";
+	char *s4 = "cd\nexit\nenv\nhelp\n";
+	char *s5 = "Use the man command for information on other programs.";
 
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
-	_putchar('\n');
+
 	for (i = 0; s2[i] != '\0'; i++)
 		_putchar(s2[i]);
-	_putchar('\n');
+
 	for (i = 0; s3[i] != '\0'; i++)
-		_putchar(s4[i]);
-	_putchar('\n');
+		_putchar(s3[i]);
+
 	for (i = 0; s4[i] != '\0'; i++)
-		_putchar(s5[i]);
-	_putchar('\n');
+		_putchar(s4[i]);
+
 	for (i = 0; s5[i] != '\0'; i++)
 		_putchar(s5[i]);
-	_putchar('\n');
-	for (i = 0; s6[i] != '\0'; i++)
-		_putchar(s6[i]);
-	_putchar('\n');
-	for (i = 0; s7[i] != '\0'; i++)
-		_putchar(s7[i]);
-	_putchar('\n');
-	for (i = 0; s8[i] != '\0'; i++)
-		_putchar(s8[i]);
-	_putchar('\n');
-	return (1);
+
+	return (0);
 }
 
 /**
  *_exit2 - exits our command.
- *@arg: Our command.
  *Return: 0
  */
 int _exit2(void)
@@ -116,12 +105,14 @@ int _exit2(void)
 /**
  *_env - Prints the current environ
  *@commands: Command line
+ *Return: 0
  */
 
 int _env(char **commands)
 {
 	int i;
 	char *s = *environ;
+
 	if (commands[1] != NULL)
 	{
 		return (0);
@@ -134,5 +125,3 @@ int _env(char **commands)
 	}
 	return (0);
 }
-
-

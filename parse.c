@@ -2,8 +2,9 @@
 #define BUFF_SIZE 128
 
 /**
-  *get_input - Split the commands line
+  *split_line - Split the commands line
   *@input: line to split
+  *@separator: Character for split
   *Return: array of commands strings
   */
 

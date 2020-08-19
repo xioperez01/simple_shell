@@ -29,7 +29,8 @@ int exec_commands(char **commands);
 int _stat(const char *phat, struct stat *buf);
 char **find_built(char **commands);
 char *_path(char *path_command, char *commands);
-char *_getenv( char *name);
+char *_getenv(char *name);
+char *_final_path(char *path, char *new_command);
 
 /*int find_type_command(char **command);*/
 

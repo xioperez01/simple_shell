@@ -6,7 +6,7 @@
   *Return: Enviromental varible
   */
 
-char *_getenv( char *name)
+char *_getenv(char *name)
 {
 	char *name_var;
 	int i, result = 0;
@@ -20,8 +20,5 @@ char *_getenv( char *name)
 		if (result == 0)
 			name_var = environ[i];
 	}
-	/*if (result != 0)
-		name_var = NULL;
-*/
 	return (name_var);
 }
