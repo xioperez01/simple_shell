@@ -2,6 +2,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/xioperez01/simple_shell?color=orange)](https://github.com/xioperez01/simple_shell/network)
 [![GitHub stars](https://img.shields.io/github/stars/xioperez01/simple_shell?color=blueviolet)](https://github.com/xioperez01/simple_shell/stargazers)
 # Simple Shell :shell: #
+[](https://img-a.udemycdn.com/course/750x422/1349660_ecfb_4.jpg)
 This repository contains our own version of a mini Shell
 
 A **Unix shell** is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
@@ -10,7 +11,7 @@ Shells may be used interactively or non-interactively. In interactive mode, they
 Our shell is a simple version that has basic functionality. You can create / write / read / open / delete folders, print things in terminal, change directories, etc.
 
 
-## How To Install & Compile ##
+## How To Install & Compile :computer: ##
 To have this repository and its content, you must execute the following on your terminal:
 ~~~
 $ git clone https://github.com/xioperez01/simple_shell.git
@@ -21,12 +22,13 @@ You do not need to create a main function as it is already in our files.
 To compile and run type the following in your terminal:
 
 ~~~
-$ gcc -Wall -Werror -Wextra -pedantic *.c -o shell
-$ ./shell
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+$ ./hsh
 MAXIO~$
 ~~~
 
-## Description of the files contained. ##
+
+## Description of the files contained.:books: ##
 
 | File  name   | Description   |
 | ------------- |:-------------:|
@@ -45,12 +47,13 @@ MAXIO~$
 | AUTHORS | Contains the list of repository authors |
 
 
-##Note##
+## Note ##
 If you want to review the manual of our _printf function you can execute
 in your terminal:
 ~~~
-$man ./man_1_simple_shell
+$ man ./man_1_simple_shell
 ~~~
+
 
 ## How it works ##
 If you want to know how our shell works (a simple shell), we invite you to visit [our blog](https://www.linkedin.com/posts/martin-corredor-a631151b0_what-happens-when-you-type-ls-l-in-a-shell-activity-6701692741946028032-JD78)
@@ -68,6 +71,7 @@ MAXIO~$
 MAXIO~$ exit
 $
 ~~~
+
 
 In non-interactive mode
 ~~~
