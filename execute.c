@@ -20,18 +20,18 @@ int exec_commands(char **commands)
 	{
 		if (execve(commands[0], commands, NULL) == -1)
 		{
-			perror("Error: Child filed");
+			perror("Error: ");
+			exit(2);
 		}
-		exit(2);
 
 	}
 	else if (process < 0)
-		perror("Error: Fork failed");
+		perror("Error: ");
 	else
 	{
 		do {
 			waitpid(process, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
-	return (1);
+	return (EXIT_SUCCESS);
 }

@@ -73,7 +73,7 @@ int _help(void)
 	char *s2 = "Type program names and arguments, and hit enter.\n";
 	char *s3 = "The following commands are built in:\n";
 	char *s4 = "cd\nexit\nenv\nhelp\n";
-	char *s5 = "Use the man command for information on other programs.";
+	char *s5 = "Use the man command for information on other programs.\n";
 
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
@@ -90,7 +90,7 @@ int _help(void)
 	for (i = 0; s5[i] != '\0'; i++)
 		_putchar(s5[i]);
 
-	return (1);
+	return (2);
 }
 
 /**
@@ -125,5 +125,5 @@ int _env(char **commands)
 		s = *(environ + i);
 	}
 	free(commands[0]);
-	return (EXIT_SUCCESS);
+	return (2);
 }

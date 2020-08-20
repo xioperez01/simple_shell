@@ -8,7 +8,7 @@ int main(void)
 {
 	char *input = NULL, *line_converted, **tokens, *path_command;
 	char *search_program;
-	int status, i = 0; /*type_command = 0*/
+	int status, i = 0;
 	char s[] = "Error: File or description not found\n";
 
 	signal(SIGINT, sighandler);
@@ -41,8 +41,5 @@ int main(void)
 		free(search_program);
 	} while (status);
 
-	/*if (isatty(STDIN_FILENO))*/
-	/*write(1, "\n", 1);*/
-
-	return (0);
+	return (EXIT_SUCCESS);
 }
