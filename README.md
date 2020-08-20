@@ -14,15 +14,16 @@ Our shell is a simple version that has basic functionality. You can create / wri
 To have this repository and its content, you must execute the following on your terminal:
 ~~~
 $ git clone https://github.com/xioperez01/simple_shell.git
-$ cd simple_shell
+$ cd simple_shell/
 ~~~
 You do not need to create a main function as it is already in our files.
 
 To compile and run type the following in your terminal:
 
 ~~~
-$ gcc -Wall -Werror -Wextra -pedantic .c -o shell
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o shell
 $ ./shell
+MAXIO~$
 ~~~
 
 ## Description of the files contained. ##
@@ -44,15 +45,37 @@ $ ./shell
 | AUTHORS | Contains the list of repository authors |
 
 
+##Note##
+If you want to review the manual of our _printf function you can execute
+in your terminal:
+~~~
+$man ./man_1_simple_shell
+~~~
+
 ## How it works ##
-If you want to know how our shell works (a simple shell), we invite you to visit [### our blog ###](https://www.linkedin.com/posts/martin-corredor-a631151b0_what-happens-when-you-type-ls-l-in-a-shell-activity-6701692741946028032-JD78)
+If you want to know how our shell works (a simple shell), we invite you to visit [our blog](https://www.linkedin.com/posts/martin-corredor-a631151b0_what-happens-when-you-type-ls-l-in-a-shell-activity-6701692741946028032-JD78)
+
 
 ## Execution examples of our shell ##
 
 In interactive mode
+~~~
+$ ./hsh
+MAXIO~$ /bin/ls
+AUTHORS  README.md  aux_func.c	 convert.c  get_env.c  man_1_simple_shell  read_line.c	shell.h
+LICENSE  _path.c    built_ins.c  execute.c  main.c     parse.c		   shell	signal_handler.c
+MAXIO~$
+MAXIO~$ exit
+$
+~~~
 
 In non-interactive mode
-
+~~~
+$ echo "/bin/ls" | ./hsh
+AUTHORS  README.md  aux_func.c	 convert.c  get_env.c  man_1_simple_shell  read_line.c	shell.h
+LICENSE  _path.c    built_ins.c  execute.c  main.c     parse.c		   shell	signal_handler.c
+$
+~~~
 
 ## Environment ##
 * Language: C
