@@ -29,7 +29,7 @@ int execute_builtins(char **commands)
 	if (_strstr(commands[0], f_env1) == 0)
 		return (_env(commands));
 
-	return (-1);
+	return (EXIT_FAILURE);
 }
 
 /**
@@ -59,7 +59,7 @@ int _cd(char **arg)
 		}
 	}
 	printf("Ejecutó la función_cd\n\n");
-	return (1);
+	return (EXIT_SUCCESS);
 }
 
 /**
@@ -73,7 +73,7 @@ int _help(void)
 	char *s2 = "Type program names and arguments, and hit enter.\n";
 	char *s3 = "The following commands are built in:\n";
 	char *s4 = "cd\nexit\nenv\nhelp\n";
-	char *s5 = "Use the man command for information on other programs.";
+	char *s5 = "Use the man command for information on other programs.\n";
 
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
@@ -90,7 +90,7 @@ int _help(void)
 	for (i = 0; s5[i] != '\0'; i++)
 		_putchar(s5[i]);
 
-	return (0);
+	return (2);
 }
 
 /**
@@ -115,7 +115,8 @@ int _env(char **commands)
 
 	if (commands[1] != NULL)
 	{
-		return (0);
+		free(commands);
+		return (EXIT_FAILURE);
 	}
 	for (i = 0; s; i++)
 	{
@@ -123,5 +124,6 @@ int _env(char **commands)
 		write(STDIN_FILENO, "\n", 1);
 		s = *(environ + i);
 	}
-	return (0);
+	free(commands[0]);
+	return (2);
 }
